@@ -1,0 +1,52 @@
+﻿@model Brand
+@{
+    ViewBag.Title = "Marka Düzenleme";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+
+<section class="panel">
+    <header class="panel-heading">
+        @ViewBag.Title
+    </header>
+    <div class="panel-body">
+        @using (Html.BeginForm("Edit", "Brand", FormMethod.Post, new { @class = "form-horizontal"}))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(x => x.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.BrandName, new { @class = "col-lg-3 col-sm-3 control-label" })
+                <div class="col-lg-9">
+                    @Html.EditorFor(x => x.BrandName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.BrandName, null, new { @class = "text-danger" })
+                    <span class="text-danger">@ViewBag.Error</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.ListOrder, new { @class = "col-lg-3 col-sm-3 control-label" })
+                <div class="col-lg-9">
+                    @Html.EditorFor(x => x.ListOrder, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Active, new { @class = "col-lg-3 col-sm-3 control-label" })
+                <div class="col-lg-9">
+                    @Html.EnumDropDownListFor(x => x.Active, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-offset-3 col-lg-9">
+                    <button type="submit" class="btn btn-success">Kaydet</button>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+@section Styles{
+    <link href="~/Content/CommonTheme/css/image-zoom.css" rel="stylesheet" />
+}

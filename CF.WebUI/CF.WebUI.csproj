@@ -1,0 +1,377 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47D24672-9D41-4C25-A904-1C4936481EA7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CF.WebUI</RootNamespace>
+    <AssemblyName>CF.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\CommonTheme\assets\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Content\CommonTheme\assets\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="Content\CommonTheme\css\bootstrap-reset.css" />
+    <Content Include="Content\CommonTheme\css\bootstrap-theme.css" />
+    <Content Include="Content\CommonTheme\css\bootstrap-theme.min.css" />
+    <Content Include="Content\CommonTheme\css\bootstrap.css" />
+    <Content Include="Content\CommonTheme\css\bootstrap.min.css" />
+    <Content Include="Content\CommonTheme\css\gallery.css" />
+    <Content Include="Content\CommonTheme\css\image-crop.css" />
+    <Content Include="Content\CommonTheme\css\image-zoom.css" />
+    <Content Include="Content\CommonTheme\css\navbar-fixed-top.css" />
+    <Content Include="Content\CommonTheme\css\owl.carousel.css" />
+    <Content Include="Content\CommonTheme\css\style-responsive.css" />
+    <Content Include="Content\CommonTheme\css\style.css" />
+    <Content Include="Content\CommonTheme\css\table-responsive.css" />
+    <Content Include="Content\CommonTheme\css\tasks.css" />
+    <Content Include="Content\CommonTheme\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\CommonTheme\img\404_icon.png" />
+    <Content Include="Content\CommonTheme\img\500_icon.png" />
+    <Content Include="Content\CommonTheme\img\arrow-up.png" />
+    <Content Include="Content\CommonTheme\img\avatar-mini.jpg" />
+    <Content Include="Content\CommonTheme\img\avatar-mini2.jpg" />
+    <Content Include="Content\CommonTheme\img\avatar-mini3.jpg" />
+    <Content Include="Content\CommonTheme\img\avatar-mini4.jpg" />
+    <Content Include="Content\CommonTheme\img\avatar1.jpg" />
+    <Content Include="Content\CommonTheme\img\avatar1_small.jpg" />
+    <Content Include="Content\CommonTheme\img\chart-texture.jpg" />
+    <Content Include="Content\CommonTheme\img\chat-avatar.jpg" />
+    <Content Include="Content\CommonTheme\img\chat-avatar2.jpg" />
+    <Content Include="Content\CommonTheme\img\checkbox\check-off.png" />
+    <Content Include="Content\CommonTheme\img\checkbox\check-on.png" />
+    <Content Include="Content\CommonTheme\img\checkbox\radio-off.png" />
+    <Content Include="Content\CommonTheme\img\checkbox\radio-on.png" />
+    <Content Include="Content\CommonTheme\img\customSelect-arrow.gif" />
+    <Content Include="Content\CommonTheme\img\file-search\ai.png" />
+    <Content Include="Content\CommonTheme\img\file-search\doc.png" />
+    <Content Include="Content\CommonTheme\img\file-search\email.png" />
+    <Content Include="Content\CommonTheme\img\file-search\eps.png" />
+    <Content Include="Content\CommonTheme\img\file-search\jpg.png" />
+    <Content Include="Content\CommonTheme\img\file-search\pdf.png" />
+    <Content Include="Content\CommonTheme\img\file-search\ppt.png" />
+    <Content Include="Content\CommonTheme\img\file-search\psd.png" />
+    <Content Include="Content\CommonTheme\img\file-search\rss.png" />
+    <Content Include="Content\CommonTheme\img\file-search\xls.png" />
+    <Content Include="Content\CommonTheme\img\file-search\zip.png" />
+    <Content Include="Content\CommonTheme\img\flags\de.png" />
+    <Content Include="Content\CommonTheme\img\flags\es.png" />
+    <Content Include="Content\CommonTheme\img\flags\fr.png" />
+    <Content Include="Content\CommonTheme\img\flags\ru.png" />
+    <Content Include="Content\CommonTheme\img\flags\us.png" />
+    <Content Include="Content\CommonTheme\img\follower-avatar.jpg" />
+    <Content Include="Content\CommonTheme\img\gallery\1.jpg" />
+    <Content Include="Content\CommonTheme\img\gallery\2.jpg" />
+    <Content Include="Content\CommonTheme\img\gallery\3.jpg" />
+    <Content Include="Content\CommonTheme\img\gallery\4.jpg" />
+    <Content Include="Content\CommonTheme\img\gallery\5.jpg" />
+    <Content Include="Content\CommonTheme\img\gallery\6.jpg" />
+    <Content Include="Content\CommonTheme\img\gallery\7.jpg" />
+    <Content Include="Content\CommonTheme\img\left-arrow.png" />
+    <Content Include="Content\CommonTheme\img\lock-bg.jpg" />
+    <Content Include="Content\CommonTheme\img\mail-avatar.jpg" />
+    <Content Include="Content\CommonTheme\img\mask-square.png" />
+    <Content Include="Content\CommonTheme\img\mask.png" />
+    <Content Include="Content\CommonTheme\img\nav-expand.png" />
+    <Content Include="Content\CommonTheme\img\pro-ac-1.png" />
+    <Content Include="Content\CommonTheme\img\pro-ac-2.png" />
+    <Content Include="Content\CommonTheme\img\product-list\pro-1.jpg" />
+    <Content Include="Content\CommonTheme\img\product-list\pro-thumb-1.jpg" />
+    <Content Include="Content\CommonTheme\img\product-list\pro-thumb-2.jpg" />
+    <Content Include="Content\CommonTheme\img\product-list\pro-thumb-3.jpg" />
+    <Content Include="Content\CommonTheme\img\product-list\pro-thumb-big.jpg" />
+    <Content Include="Content\CommonTheme\img\product-list\pro1.jpg" />
+    <Content Include="Content\CommonTheme\img\product-list\pro2.jpg" />
+    <Content Include="Content\CommonTheme\img\product-list\pro3.jpg" />
+    <Content Include="Content\CommonTheme\img\product1.jpg" />
+    <Content Include="Content\CommonTheme\img\product2.png" />
+    <Content Include="Content\CommonTheme\img\product3.png" />
+    <Content Include="Content\CommonTheme\img\profile-avatar.jpg" />
+    <Content Include="Content\CommonTheme\img\right-arrow.png" />
+    <Content Include="Content\CommonTheme\img\ring.jpg" />
+    <Content Include="Content\CommonTheme\img\search-icon.jpg" />
+    <Content Include="Content\CommonTheme\img\sm-img-1.jpg" />
+    <Content Include="Content\CommonTheme\img\sm-img-2.jpg" />
+    <Content Include="Content\CommonTheme\img\sm-img-3.jpg" />
+    <Content Include="Content\CommonTheme\img\vector-lab.jpg" />
+    <Content Include="Content\CommonTheme\js\additional-methods.min.js" />
+    <Content Include="Content\CommonTheme\js\advanced-form-components.js" />
+    <Content Include="Content\CommonTheme\js\all-chartjs.js" />
+    <Content Include="Content\CommonTheme\js\bootstrap-switch.js" />
+    <Content Include="Content\CommonTheme\js\bootstrap.js" />
+    <Content Include="Content\CommonTheme\js\bootstrap.min.js" />
+    <Content Include="Content\CommonTheme\js\common-scripts.js" />
+    <Content Include="Content\CommonTheme\js\count.js" />
+    <Content Include="Content\CommonTheme\js\dynamic-table.js" />
+    <Content Include="Content\CommonTheme\js\easy-pie-chart.js" />
+    <Content Include="Content\CommonTheme\js\editable-table.js" />
+    <Content Include="Content\CommonTheme\js\external-dragging-calendar.js" />
+    <Content Include="Content\CommonTheme\js\flot-chart.js" />
+    <Content Include="Content\CommonTheme\js\form-component.js" />
+    <Content Include="Content\CommonTheme\js\form-image-crop.js" />
+    <Content Include="Content\CommonTheme\js\form-validation-script.js" />
+    <Content Include="Content\CommonTheme\js\ga.js" />
+    <Content Include="Content\CommonTheme\js\gmaps-scripts.js" />
+    <Content Include="Content\CommonTheme\js\gmaps.js" />
+    <Content Include="Content\CommonTheme\js\gritter.js" />
+    <Content Include="Content\CommonTheme\js\hover-dropdown.js" />
+    <Content Include="Content\CommonTheme\js\html5shiv.js" />
+    <Content Include="Content\CommonTheme\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\CommonTheme\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\CommonTheme\js\jquery.cookie.js" />
+    <Content Include="Content\CommonTheme\js\jquery.customSelect.min.js" />
+    <Content Include="Content\CommonTheme\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Content\CommonTheme\js\jquery.dcjqaccordion.2.7.min.js" />
+    <Content Include="Content\CommonTheme\js\jquery.js" />
+    <Content Include="Content\CommonTheme\js\jquery.nicescroll.js" />
+    <Content Include="Content\CommonTheme\js\jquery.scrollTo.min.js" />
+    <Content Include="Content\CommonTheme\js\jquery.sparkline-11.js" />
+    <Content Include="Content\CommonTheme\js\jquery.sparkline.js" />
+    <Content Include="Content\CommonTheme\js\jquery.stepy.js" />
+    <Content Include="Content\CommonTheme\js\jquery.tagsinput.js" />
+    <Content Include="Content\CommonTheme\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\CommonTheme\js\jquery.validate.min.js" />
+    <Content Include="Content\CommonTheme\js\modernizr.custom.js" />
+    <Content Include="Content\CommonTheme\js\morris-script.js" />
+    <Content Include="Content\CommonTheme\js\nestable.js" />
+    <Content Include="Content\CommonTheme\js\owl.carousel.js" />
+    <Content Include="Content\CommonTheme\js\respond.min.js" />
+    <Content Include="Content\CommonTheme\js\respond.src.js" />
+    <Content Include="Content\CommonTheme\js\sliders.js" />
+    <Content Include="Content\CommonTheme\js\sparkline-chart.js" />
+    <Content Include="Content\CommonTheme\js\tasks.js" />
+    <Content Include="Content\CommonTheme\js\toucheffects.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\bootstrap.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\core.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\extras.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\icons.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\mixins.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\path.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\less\variables.less" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\font-awesome-ie7.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\_bootstrap.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\_core.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\_extras.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\_path.scss" />
+    <Content Include="Content\CommonTheme\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\CommonTheme\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\CommonTheme\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\CommonTheme\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\EditLogo.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Removed.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Remove.cshtml" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_CommonLayout.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Uploads\BrandLogos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CF.Common\CF.Common.csproj">
+      <Project>{46411928-E051-4700-A2B9-C8F1251837FA}</Project>
+      <Name>CF.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CF.Model\CF.Model.csproj">
+      <Project>{DB5563E8-F588-45F9-9FAB-D6B28B83EFCC}</Project>
+      <Name>CF.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CF.Service\CF.Service.csproj">
+      <Project>{FA4905BD-57EE-477C-AD71-87D74A5037DC}</Project>
+      <Name>CF.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60305</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60305/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

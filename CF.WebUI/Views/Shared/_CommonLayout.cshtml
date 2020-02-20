@@ -1,0 +1,237 @@
+﻿@using CF.Common.Tools
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="~/Content/CommonTheme/img/favicon.png">
+
+    <title>@ViewBag.Title - Çevik Fuar Ziyaretçi Otomasyonu</title>
+
+    @Styles.Render("~/Common/Styles")
+    @RenderSection("Styles", false)
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="~/Content/CommonTheme/js/html5shiv.js"></script>
+      <script src="~/Content/CommonTheme/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="boxed-page">
+    <div class="container">
+        <section id="container">
+            <!--header start-->
+            <header class="header white-bg">
+                <div class="container">
+                    <div class="sidebar-toggle-box">
+                        <div data-original-title="Menü Gizle/Göster" data-placement="right" class="icon-reorder tooltips"></div>
+                    </div>
+                    <!--logo start-->
+                    <a href="@Url.Action("Index", "Home")" class="logo">Çevik<span>Fuar</span></a>
+                    <!--logo end-->
+                    <div class="nav notify-row" id="top_menu">
+                        <!--  notification start -->
+                        <ul class="nav top-menu">
+                            <!-- notification dropdown start-->
+                            <li id="header_notification_bar" class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                                    <i class="icon-bell-alt"></i>
+                                    <span class="badge bg-warning">7</span>
+                                </a>
+                                <ul class="dropdown-menu extended notification">
+                                    <div class="notify-arrow notify-arrow-yellow"></div>
+                                    <li>
+                                        <p class="yellow">Yeni 1 adet bildiriminiz var</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="label label-danger"><i class="icon-bolt"></i></span>
+                                            Busworld 2020 fuarının kayıtlarını tamamlamalısın
+                                            <span class="small italic">34 mins</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tüm bildirimleri gör</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- notification dropdown end -->
+                        </ul>
+                        <!--  notification end -->
+                    </div>
+                    <div class="top-nav ">
+                        <!--search & user info start-->
+                        <ul class="nav pull-right top-menu">
+                            <li>
+                                <input type="text" class="form-control search" placeholder="Search">
+                            </li>
+                            <!-- user login dropdown start-->
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <img alt="" src="~/Content/CommonTheme/img/avatar1_small.jpg">
+                                    <span class="username">Ömer Faruk Bal</span>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu extended logout">
+                                    <div class="log-arrow-up"></div>
+                                    <li><a href="#"><i class=" icon-suitcase"></i>Profil</a></li>
+                                    <li><a href="#"><i class="icon-cog"></i>Ayarlar</a></li>
+                                    <li><a href="#"><i class="icon-bell-alt"></i>Bildirimler</a></li>
+                                    <li><a href="@Url.Action("Logout", "Account")"><i class="icon-key"></i>Çıkış</a></li>
+                                </ul>
+                            </li>
+                            <!-- user login dropdown end -->
+                        </ul>
+                        <!--search & user info end-->
+                    </div>
+                </div>
+            </header>
+            <!--header end-->
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar" class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a class="@Html.IsActive("Home")" href="@Url.Action("Index", "Home")">
+                                <i class="icon-dashboard"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("Visitor")" href="javascript:;">
+                                <i class="icon-group"></i>
+                                <span>Ziyaretçiler</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "Visitor")"><a href="@Url.Action("Index", "Visitor")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "Visitor")"><a href="@Url.Action("Add", "Visitor")">Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("Brand")" href="javascript:;">
+                                <i class="icon-building"></i>
+                                <span>Markalar</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "Brand")"><a href="@Url.Action("Index", "Brand")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "Brand")"><a href="@Url.Action("Add", "Brand")">Ekle</a></li>
+                                <li class="@Html.IsActive("Removed", "Brand")"><a href="@Url.Action("Removed", "Brand")">Silinmiş Kayıtlar</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("Sector")" href="javascript:;">
+                                <i class="icon-plane"></i>
+                                <span>Sektörler</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "Sector")"><a href="@Url.Action("Index", "Sector")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "Sector")"><a href="@Url.Action("Add", "Sector")">Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("Product")" href="javascript:;">
+                                <i class="icon-suitcase"></i>
+                                <span>Ürün Grupları</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "Product")"><a href="@Url.Action("Index", "Product")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "Product")"><a href="@Url.Action("Add", "Product")">Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("Region")" href="javascript:;">
+                                <i class="icon-globe"></i>
+                                <span>Bölgeler</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "Region")"><a href="@Url.Action("Index", "Region")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "Region")"><a href="@Url.Action("Add", "Region")">Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("CompanyType")" href="javascript:;">
+                                <i class="icon-puzzle-piece"></i>
+                                <span>Faaliyet Alanları</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "CompanyType")"><a href="@Url.Action("Index", "CompanyType")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "CompanyType")"><a href="@Url.Action("Add", "CompanyType")">Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("Task")" href="javascript:;">
+                                <i class="icon-tasks"></i>
+                                <span>Görevler</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "Task")"><a href="@Url.Action("Index", "Task")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "Task")"><a href="@Url.Action("Add", "Task")">Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a class="@Html.IsActive("Employee")" href="javascript:;">
+                                <i class="icon-user"></i>
+                                <span>Kullanıcı İşlemleri</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="@Html.IsActive("Index", "Employee")"><a href="@Url.Action("Index", "Employee")">Listele</a></li>
+                                <li class="@Html.IsActive("Add", "Employee")"><a href="@Url.Action("Add", "Employee")">Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="@Html.IsActive("Setting")" href="@Url.Action("Index", "Setting")">
+                                <i class="icon-gear"></i>
+                                <span>Ayarlar</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+            <!--main content start-->
+            <section id="main-content">
+                <section class="wrapper">
+
+                    @RenderBody()
+
+                </section>
+            </section>
+            <!--main content end-->
+            <!--footer start-->
+            <footer class="site-footer">
+                <div class="text-center">
+                    @DateTime.Now.Year &copy; Çevik Bağlantı Teknolojileri
+                    <a href="#" class="go-top">
+                        <i class="icon-angle-up"></i>
+                    </a>
+                </div>
+            </footer>
+            <!--footer end-->
+        </section>
+
+        @Scripts.Render("~/Common/Scripts")
+        @RenderSection("Scripts", false)
+    </div>
+</body>
+</html>
